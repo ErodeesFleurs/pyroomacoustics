@@ -4,16 +4,14 @@
 #
 # Then you can build with: `docker build -t pyroom_container .`
 # And enter container with: `docker run -it pyroom_container:latest /bin/bash`
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 RUN dpkg --add-architecture i386
 RUN apt-get update
-RUN apt-get install -y python3-dev python3-pip
-
-# We must reinstall pip from pypi to make sure that the dependencies are installed
-# See https://github.com/pypa/pip/issues/7874
+RUN apt-get install -y python3.10 python-pip
 
 RUN python3 -m pip install --user --ignore-installed pip
+
 RUN pip3 install pyroomacoustics
 RUN pip3 install numpy
 RUN pip3 install matplotlib
