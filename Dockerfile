@@ -15,3 +15,7 @@ RUN apt-get install -y python3-dev python3-pip
 
 RUN python3 -m pip install --user --ignore-installed pip
 RUN pip3 install pyroomacoustics
+RUN pip3 install numpy
+RUN pip3 install matplotlib
+RUN pip3 install scipy
+RUN pip3 install ipython
