@@ -10,8 +10,6 @@ RUN dpkg --add-architecture i386
 RUN apt-get update
 RUN apt-get install -y python3.10 python-pip
 
-RUN python3 -m pip install --user --ignore-installed pip
-
 RUN pip3 install pyroomacoustics
 RUN pip3 install numpy
 RUN pip3 install matplotlib
